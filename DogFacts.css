@@ -1,0 +1,118 @@
+@CHARSET "ISO-8859-1";
+
+body 
+{
+	background-color:#3e2000;
+	background-image: url(img/WebBackgroundImage.svg);
+	background-attachment: fixed;
+	background-position:center center;
+	background-repeat: no-repeat;
+	-o-background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	background-size:cover;
+}
+.no-svg body
+{
+	background-image: url(img/WebBackgroundImage.png);
+}
+#navContainer
+{
+	position: relative;
+	z-index: 500;
+	margin-bottom: 10px;
+}
+.content-box
+{
+	background: #ce9b63;
+	-moz-opacity: 0.8;
+	opacity:0.8;
+}
+.content-box h3
+{
+	color:#8B4513;
+	width:99%;
+	padding:5px;
+	border-bottom: 3px solid #8B4513;
+}
+.content-box h4
+{
+	color:#8B4513;
+	width:50%;
+	padding:5px;
+	border-bottom: 2px solid #8B4513;
+}
+.content-box p
+{
+    color:#46230a;
+	margin: 10px;
+	font-size: 15px;
+	
+}
+.list
+{
+    color:#46230a;
+	font-size: 15px;
+	list-style:url(img/paw-bullet.png);
+	
+}
+.content-box h2 
+{
+	color:white;
+	with: 100%;
+	padding: 5px;
+	background: #8B4513;
+}
+.outsideLinkList
+{
+	color: white ! important;
+	list-style:none;
+	font-size: 15px;
+}
+.outsideLinkList a:visited
+{
+	color:#674019 ! important;
+}
+.outsideLinkList li
+{
+	line-height: 30px;
+	vertical-align:middle;
+}
+.outsideLinkList li .link
+{
+	font-size: 15px;
+	padding: 5px;
+}
+.linkList
+{
+	list-style:url(img/paw-bullet.png);
+	font-size: 15px;
+}
+.linkList a
+{
+	color:white ! important;
+}
+.linkList a:visited
+{
+	color:#674019 ! important;
+}
+.email
+{
+	color: white ! important;
+}
+.email:visited
+{
+	color:#674019 ! important;
+}
+.wrapper
+{
+	width: 100%;
+}
+.colleft
+{
+	float:left;
+}
+.colright
+{
+	float:right
+}

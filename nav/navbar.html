@@ -1,0 +1,30 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+      $( '.dropdown' ).hover(
+        function(){
+          $(this).children('.sub-menu').slideDown(200);
+        },
+        function(){
+          $(this).children('.sub-menu').slideUp(200);
+        }
+      );
+    }); // end ready
+</script>
+<link rel="stylesheet" href="navbar.css">
+<div class="logo-container">
+	<img height="200px" src="nav/DogFactsLogo.png">
+</div>
+<div class="nav">
+    <ul class="maingroup">
+      <li class="mainlink"><a href="index.html">Home</a></li>
+      <li class="mainlink"><a href="#">Picking a Puppy</a></li>
+      <li class="dropdown mainlink">
+        <a href="#">Dog Breed Info</a>
+        <ul class="sub-menu">
+          <li><a href="#">Breed Groups</a></li>
+          <li><a href="#">Find a Breed</a></li>
+        </ul>
+      </li>
+    </ul>
+</div>
