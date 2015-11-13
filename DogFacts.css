@@ -49,6 +49,12 @@ body
 	font-size: 15px;
 	
 }
+.content-box form
+{
+    color:#46230a;
+	font-size: 20px;
+	
+}
 .list
 {
     color:#46230a;
@@ -115,4 +121,25 @@ body
 .colright
 {
 	float:right
+}
+#filter
+{
+	height: 300px;
+	padding-left: 5px;
+}
+fieldset 
+{
+	border-style: none;
+}
+button
+{
+	font-size: 20px;
+	padding: 5 px;
+}
+#submit
+{
+	font-size: 25px;
+	margin-top: 10px;
+	padding: 10 px;
+	margin-left: 25%;
 }

@@ -1,0 +1,7 @@
+Akita|www.google.com|large|working
+Japanese Chin|www.google.com|small|toy
+Golden Retriver|www.google.com|large|sporting
+Smooth Fox Terrier|www.google.com|small|terrier
+Border Collie|www.google.com|medium|herding
+Keeshond|www.google.com|medium|non-sporting
+Beagle|www.google.com|small|hound
