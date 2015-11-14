@@ -23,7 +23,7 @@
 			<button id="toggle-type" value="on" style="margin-left: 75px;"onclick="toggle(this.id, 'type')">Turn Type Filter Off</button>
 			<form name="filter" onsubmit="validateAndFilter()">
 				<div class="wrapper" style="height: 200px;">
-					<div class="colleft" style="height: 100%;">
+					<div class="colleft" style=" height: 100%;">
 						<fieldset >
 							Select Breed Sizes to display:<br> 
 							<input type="checkbox" name="s" value="small">Small<br>
@@ -49,14 +49,13 @@
 						<span id="type-error" class="error"></span>
 					</fieldset>
 				</div>
-				<input type="submit" id="submit" value="Find Breeds">
+				<input type="button" onclick="validateAndFilter()" id="submit" value="Find Breeds">
 			</form>
 		</div>
-		<div class="colright">
-			<ul id="results">
-				
+			<ul id="results">	
 			</ul>
-		</div>
+			<ul id="results2">	
+			</ul>
 	</div>
 </div>
 </body>

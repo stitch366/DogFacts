@@ -143,3 +143,11 @@ button
 	padding: 10 px;
 	margin-left: 25%;
 }
+#results
+{
+	display: inline;
+}
+#results2
+{
+	display: inline;
+}

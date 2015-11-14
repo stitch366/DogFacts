@@ -16,13 +16,15 @@ function validateAndFilter()
 	var descending = document.forms["filter"]["sort"].value
 	var sizeFilter = [];
 	var typeFilter = [];
-	
+	var results = [];
 	if (valid)
 		{
 		  sizeFilter = getFilterS();
 		  typeFilter = getFilterT();
-		  getResults(sizeFilter, typeFilter);
-		  alphabetize("results", descending);
+		  results = getResults(sizeFilter, typeFilter);
+		  alphabetize(results, descending);
+		  createLists(results);
+
 		}
 }
 function toggle(buttonId, toToggle)
@@ -174,6 +176,7 @@ function getResults(sFilter, tFilter)
 {
 	var lines = file.responseText.split("\n");
 	var numEntries = lines.length;
+	var results = []
 	var list = "";
 	for(var x = 0; x < numEntries; x++)
 		{
@@ -181,27 +184,22 @@ function getResults(sFilter, tFilter)
 		}
 	for(var x = 0; x < numEntries; x++)
 	{	
-		var values = lines[x].split("|");
-		list = list + makeLi(lines[x], sFilter, tFilter); 
+		makeLi(lines[x], sFilter, tFilter, results); 
 	}
-	document.getElementById("results").innerHTML = list;
+	return results;
 }
-function makeLi(line, sFilter, tFilter)
+function makeLi(line, sFilter, tFilter, results)
 {
 	var values = line.split("|");
 	var breed = values[0];
 	var url = values[1];
 	var isRightSize = compare(values[2], sFilter);
     var isRightType = compare(values[3], tFilter);
-	
+	var line = listString1 + url + listString2 + breed + listSrting3;
     if(isRightSize && isRightType)
     	{
-    		return listString1 + url + listString2 + breed + listSrting3 +"\n";
+    		results.push(line);
     	}
-    else
-    {
-    	return "";
-    }
 	
 }
 function compare(value, Filter)
@@ -218,27 +216,44 @@ function compare(value, Filter)
 	}
 	return include;
 }
-function alphabetize(ul, sortDescending) {
-	  if(typeof ul == "string")
-	    ul = document.getElementById(ul);
-
-
-	  // Get the list items and setup an array for sorting
-	  var lis = ul.getElementsByTagName("LI");
-	  var vals = [];
-
-	  // Populate the array
-	  for(var i = 0, l = lis.length; i < l; i++)
-	    vals.push(lis[i].innerHTML);
-
+function alphabetize(results, sortDescending) {
+	  var array = results
 	  // Sort it A-Z
-	  vals.sort();
+	  array.sort();
 
 	  // Reverses order
 	  if(sortDescending)
-	    vals.reverse();
-
-	  // Change the list on the page
-	  for(var i = 0, l = lis.length; i < l; i++)
-	    lis[i].innerHTML = vals[i];
+		  array.reverse();
+	  
+	  return array;
 	}
+function createLists(results)
+{
+	var numLi = results.length;
+	var numInFristUl = Math.ceil(numLi / 2);
+	var numInSecondUL = numLi - numInFristUl;
+	var first = [];
+	var second = [];
+	for (x = 0; x < numInFristUl; x++)
+		{
+			first.push(results[x]);
+		}
+	for (y = numInFristUl; y < numLi; y++)
+		{
+			second.push(results[y]);
+		}
+	document.getElementById("results").innerHTML = arrayToString(first);
+	document.getElementById("results2").innerHTML = arrayToString(second);
+	
+}
+function arrayToString(array)
+{
+	var length = array.length;
+	var string = "";
+	
+	for(var x = 0; x < length; x++)
+		{
+			string = string + array[x]+ "\n";
+		}
+	return string;
+}
