@@ -15,20 +15,20 @@
 </head>
 <body>
 <div id="navContainer"></div>
-<div class="content-box">
+<div class="content-box" style="height: 425px;">
 	<h2>Find a Breed</h2>
 	<div id="filter" class="wrapper">
 		<div class="colleft">
 			<button id="toggle-size" value="on" style="margin-left: 15px;"onclick="toggle(this.id, 'size')">Turn Size Filter Off</button>
 			<button id="toggle-type" value="on" style="margin-left: 75px;"onclick="toggle(this.id, 'type')">Turn Type Filter Off</button>
 			<form name="filter" onsubmit="validateAndFilter()">
-				<div class="wrapper" style="height: 200px;">
+				<div class="wrapper" style="height: 100%;">
 					<div class="colleft" style=" height: 100%;">
 						<fieldset >
 							Select Breed Sizes to display:<br> 
 							<input type="checkbox" name="s" value="small">Small<br>
 							<input type="checkbox" name="m" value="medium">Medium<br>
-							<input type="checkbox" name="l" value="large">Large<br>
+							<input type="checkbox" name="l" value="large">Large<br><br>
 							<span id="size-error" class="error"></span>
 						</fieldset>
 						<fieldset>
@@ -39,12 +39,12 @@
 					</div>
 					<fieldset class="colright" style="height: 100%;">
 						Select Breed Types to display:<br>
-						<input type="checkbox" name="herding" value="herding">Herding<br>
+						<input type="checkbox" name="herding" style="margin-right:7px;" value="herding">Herding &nbsp;
 						<input type="checkbox" name="hound" value="hound">Hound<br>
-						<input type="checkbox" name="sporting" value="sporting">Sporting<br>
+						<input type="checkbox" name="sporting" style="margin-right:4px;" value="sporting">Sporting &nbsp;
 						<input type="checkbox" name="terrier" value="terrier">Terrier<br>
-						<input type="checkbox" name="toy" value="toy">Toy<br>
-						<input type="checkbox" name="working" value="working">Working<br>
+						<input type="checkbox" name="working" value="working">Working &nbsp;
+						<input type="checkbox" name="toy" value="toy">Toy <br>
 						<input type="checkbox" name="non-sporting" value="non-sporting">Non-Sporting<br>
 						<span id="type-error" class="error"></span>
 					</fieldset>
@@ -52,9 +52,9 @@
 				<input type="button" onclick="validateAndFilter()" id="submit" value="Find Breeds">
 			</form>
 		</div>
-			<ul id="results">	
+			<ul id="results" class="result">	
 			</ul>
-			<ul id="results2">	
+			<ul id="results2" class="result" style="margin-top:0px;">	
 			</ul>
 	</div>
 </div>
