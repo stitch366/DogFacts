@@ -10,6 +10,9 @@ var sTurnOff="Turn Size Filter Off";
 var sTurnOn="Turn Size Filter On ";
 var tTurnOff="Turn Type Filter Off";
 var tTurnOn="Turn Type Filter On ";
+
+//function that fires on form submission to vaildate the form and 
+//get a list of dog breeds that match the user's input
 function validateAndFilter()
 {
 	var valid = validate();
@@ -17,6 +20,8 @@ function validateAndFilter()
 	var sizeFilter = [];
 	var typeFilter = [];
 	var results = [];
+	
+	//Applies uses filter to get links the links to display should the form be valid
 	if (valid)
 		{
 		  sizeFilter = getFilterS();
@@ -26,7 +31,15 @@ function validateAndFilter()
 		  createLists(results);
 
 		}
+	
+	//function will always return false
+	//this is because otherwise the page will refresh on submission
+	//Which results in the results not being displayed long enough
+	//for the user to see them and click the links.
+	return false;
 }
+//function that when fired that "toggles" the Type and Size on and off by
+//checking all the check boxes and disabling them for the filter being toggled
 function toggle(buttonId, toToggle)
 {
 	var button = document.getElementById(buttonId);
@@ -45,6 +58,7 @@ function toggle(buttonId, toToggle)
 	}
 	button.innerHTML = newText;
 }
+//gets the new text for the filter on/off toggle button
 function getNewButtonTxt(buttonVal, toToggle)
 {
 	if (buttonVal == "on")
@@ -70,6 +84,7 @@ function getNewButtonTxt(buttonVal, toToggle)
 			}
 		}
 }
+//called by toggle(buttonId, toToggle) to toggle the filters back on
 function toggleOn(checkboxes)
 {
 	var numBoxes = checkboxes.length;
@@ -81,6 +96,7 @@ function toggleOn(checkboxes)
 		document.forms["filter"][checkboxes[x]].disabled = "";
 	}
 }
+//called by toggle(buttonId, toToggle) to toggle the filters off
 function toggleOff(checkboxes)
 {
 	var numBoxes = checkboxes.length;
@@ -92,6 +108,8 @@ function toggleOff(checkboxes)
 			document.forms["filter"][checkboxes[x]].disabled = "disabled";
 		}
 }
+//gets the array that contains check box names for the corresponding filter
+// for the toggle functions
 function getCheckboxNames(toToggle)
 {
 	if(toToggle =="size")
@@ -103,6 +121,7 @@ function getCheckboxNames(toToggle)
 			return typesCheckBoxes;
 		}
 }
+//generates an array containing the values of the size check boxes selected by the user 
 function getFilterS()
 {
 	var filter =[];
@@ -116,6 +135,7 @@ function getFilterS()
 		}
 	return filter;
 }
+//generates an array containing the values of the type check boxes selected by the user 
 function getFilterT()
 {
 	var filter =[];
@@ -129,6 +149,8 @@ function getFilterT()
 		}
 	return filter;
 }
+// function that makes sure that the user checked 
+//at least one dog type and one dog size
 function validate()
 {
 	var valid = false;
@@ -172,6 +194,7 @@ function validate()
 		}
 	return valid;
 }
+//generates an array containing li tags for the breeds that match the user's input 
 function getResults(sFilter, tFilter)
 {
 	var lines = file.responseText.split("\n");
@@ -188,6 +211,7 @@ function getResults(sFilter, tFilter)
 	}
 	return results;
 }
+//makes the Li tag for a breed and puts it into the array if it matches the users input
 function makeLi(line, sFilter, tFilter, results)
 {
 	var values = line.split("|");
@@ -202,6 +226,7 @@ function makeLi(line, sFilter, tFilter, results)
     	}
 	
 }
+//compares the size or type value for a breed with the user's input
 function compare(value, Filter)
 {
 	var include = false;
@@ -216,6 +241,7 @@ function compare(value, Filter)
 	}
 	return include;
 }
+//sorts the Results from A-Z or Z-A based on user input
 function alphabetize(results, sortDescending) {
 	  var array = results
 	  // Sort it A-Z
@@ -227,6 +253,8 @@ function alphabetize(results, sortDescending) {
 	  
 	  return array;
 	}
+//splits the number of results in half (as evenly as possible) and puts the li tags
+//in ul tags on the page
 function createLists(results)
 {
 	var numLi = results.length;
@@ -246,6 +274,7 @@ function createLists(results)
 	document.getElementById("results2").innerHTML = arrayToString(second);
 	
 }
+//converts array in to a string
 function arrayToString(array)
 {
 	var length = array.length;

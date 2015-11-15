@@ -21,7 +21,7 @@
 		<div class="colleft">
 			<button id="toggle-size" value="on" style="margin-left: 15px;"onclick="toggle(this.id, 'size')">Turn Size Filter Off</button>
 			<button id="toggle-type" value="on" style="margin-left: 75px;"onclick="toggle(this.id, 'type')">Turn Type Filter Off</button>
-			<form name="filter" onsubmit="validateAndFilter()">
+			<form id="filterForm" name="filter" onsubmit="return validateAndFilter()">
 				<div class="wrapper" style="height: 100%;">
 					<div class="colleft" style=" height: 100%;">
 						<fieldset >
@@ -49,7 +49,7 @@
 						<span id="type-error" class="error"></span>
 					</fieldset>
 				</div>
-				<input type="button" onclick="validateAndFilter()" id="submit" value="Find Breeds">
+				<input type="submit" id="submit" value="Find Breeds">
 			</form>
 		</div>
 			<ul id="results" class="result">	
