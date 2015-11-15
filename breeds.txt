@@ -1,7 +1,7 @@
-Akita|www.google.com|large|working
-Japanese Chin|www.google.com|small|toy
-Golden Retriver|www.google.com|large|sporting
-Smooth Fox Terrier|www.google.com|small|terrier
-Border Collie|www.google.com|medium|herding
-Keeshond|www.google.com|medium|non-sporting
-Beagle|www.google.com|small|hound
+Akita|breeds/akita.html|large|working
+Japanese Chin|breeds/japanese-chin.html|small|toy
+Golden Retriever|breeds/golden-retriever.html|large|sporting
+Rat Terrier|breeds/rat-terrier.html|small|terrier
+Border Collie|breeds/border-collie.html|medium|herding
+Keeshond|breeds/keeshond.html|medium|non-sporting
+Beagle|breeds/beagle.html|small|hound

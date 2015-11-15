@@ -1,0 +1,83 @@
+@CHARSET "ISO-8859-1";
+.rating
+{
+	background-image: url(img/paw-rate.png);
+	height:20 px;
+	width:60px;
+	display: block;
+	background-repeat: no-repeat;
+	border-style: none !important;
+	position: relative;
+	left: 25%;
+	
+}
+.low
+{
+	background-position: 0px 0px;
+}
+.med
+{
+	background-position: 0px -20px;
+}
+.high
+{
+	background-position: 0px -40px;
+}
+.stat-table
+{
+	margin-left:20px;
+	margin-right: 20px;
+	border-collapse: collapse;
+}
+.stat-table td,
+.stat-table th
+{
+	padding: 5px;
+}
+.stat-table .main-h,
+.stat-table .sub-h
+{
+	background: #41311f;
+}
+.stat-table .sub-h
+{
+	font-size: 20 px;
+	color: white;
+	width: 120px;
+}
+.stat-table .rate-cell
+{
+	width: 120px;
+	text-align: center;
+}
+.stat-table .txt-cell
+{
+	width: 180px;
+	color:#46230a;
+	font-size: 20 px;
+	text-align: center;
+}
+.stat-table .main-h
+{
+	font-size: 28 px;
+	color: white;
+	
+}
+.stat-table .content-row
+{
+	height: 20px;
+}
+.stat-table .head-row
+{
+	height: 30px;
+}
+.stat-table *
+{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #46230a;
+}
+.vid
+{
+	margin-bottom: 10px;
+}
