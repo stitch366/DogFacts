@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="nav/navbar.css">
+<script>
+	function importHTML(parentElmId, filePath ) {
+		  var xmlhttp;
+		  //checks brower support
+		  if (window.XMLHttpRequest) {
+		    xmlhttp = new XMLHttpRequest();
+		  } else {
+		    // code for older browsers
+		    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		  xmlhttp.onreadystatechange = function() {
+			//triggers when the request is finished and response is ready
+		    if (xmlhttp.readyState == 4) {
+		    	document.getElementById(parentElmId).innerHTML = xmlhttp.responseText;
+		    }
+		  };
+		  xmlhttp.open("GET", filePath, true);
+		  xmlhttp.send();
+		  
+		}
+	importHTML("demo", "nav/navbar.html");
+</script>
+</head>
+<body>
+<div id="demo">
+</div>
+</body>
+</html>

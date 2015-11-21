@@ -3,14 +3,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>DogFacts Dog Types</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="import.js"></script>
 <link rel="stylesheet" type="text/css" href="DogFacts.css">
 <link rel="stylesheet" type="text/css" href="nav/navbar.css">
 <script> 
-    $(function(){
-      $("#navContainer").load("nav/navbar.html"); 
-    });
-    </script>
+	//imports My navbar.html file content using the js fuction I wrote 
+	//that is contained in import.js
+	importHTML("navContainer", "nav/navbar.html");
+</script>
 </head>
 <body>
 <div id="navContainer"></div>

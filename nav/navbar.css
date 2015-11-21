@@ -43,7 +43,12 @@ ul.sub-menu {
   padding-left:0px;
   list-style-type:none;
   background-color:#8B4513;
-  display:none;
+  display:block;
+  /*visibility: hidden;
+  opacity: 0;*/
+  max-height: 0px;
+  overflow: hidden;
+  
 
 }
 .sub-menu li
@@ -56,4 +61,18 @@ ul.sub-menu {
 	text-align:center;
 	width: 100%;
 	height: 200px;
+}
+.nav li.dropdown > ul
+{
+	-webkit-transition: max-height 1.5s ease;
+       -moz-transition: max-height 1.5s ease;
+        -ms-transition: max-height 1.5s ease;
+         -o-transition: max-height 1.5s ease;
+            transition: max-height 1.5s ease;
+}
+.nav li.dropdown:hover > ul
+{
+	/*opacity: 1;*/
+	max-height:500px;
+	/*visibility: visible;*/
 }

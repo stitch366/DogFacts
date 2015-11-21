@@ -1,4 +1,3 @@
-var file = jQuery.get('breeds.txt');
 var listString1 = "<li><a href='";
 var listString2 = "'>";
 var listSrting3 = "</a></li>";
@@ -10,6 +9,30 @@ var sTurnOff="Turn Size Filter Off";
 var sTurnOn="Turn Size Filter On ";
 var tTurnOff="Turn Type Filter Off";
 var tTurnOn="Turn Type Filter On ";
+
+//variable that stores the breed data
+var breedData;
+
+//function that gets the content of the breeds.txt file
+function getBreedData() {
+	  var xmlhttp;
+	  //checks broswer support
+	  if (window.XMLHttpRequest) {
+	    xmlhttp = new XMLHttpRequest();
+	  } else {
+	    // code for older browsers
+	    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  xmlhttp.onreadystatechange = function() {
+		//triggers when the request is finished and response is ready
+	    if (xmlhttp.readyState == 4) {
+	    	breedData = xmlhttp.responseText;
+	    }
+	  };
+	  xmlhttp.open("GET", "breeds.txt", true);
+	  xmlhttp.send();
+	  
+	}
 
 //function that fires on form submission to vaildate the form and 
 //get a list of dog breeds that match the user's input
@@ -197,13 +220,13 @@ function validate()
 //generates an array containing li tags for the breeds that match the user's input 
 function getResults(sFilter, tFilter)
 {
-	var lines = file.responseText.split("\n");
+	var lines = breedData.split("+");
 	var numEntries = lines.length;
-	var results = []
+	var results = [];
 	var list = "";
 	for(var x = 0; x < numEntries; x++)
 		{
-            lines[x] = lines[x].replace("\r", "");
+            lines[x] = lines[x].replace("\r\n", "");
 		}
 	for(var x = 0; x < numEntries; x++)
 	{	
@@ -219,10 +242,10 @@ function makeLi(line, sFilter, tFilter, results)
 	var url = values[1];
 	var isRightSize = compare(values[2], sFilter);
     var isRightType = compare(values[3], tFilter);
-	var line = listString1 + url + listString2 + breed + listSrting3;
+	var item = listString1 + url + listString2 + breed + listSrting3;
     if(isRightSize && isRightType)
     	{
-    		results.push(line);
+    		results.push(item);
     	}
 	
 }
@@ -285,4 +308,37 @@ function arrayToString(array)
 			string = string + array[x]+ "\n";
 		}
 	return string;
+}
+//function that sets the Initial display 
+function setInitialDisplay()
+{
+	var allBreeds = [];
+	
+	allBreeds = getAllBreeds();
+	 alphabetize(allBreeds, false);
+	 createLists(allBreeds);
+}
+//gets all Li for all breeds
+function getAllBreeds()
+{
+	var lines = breedData.split("+");
+	var numEntries = lines.length;
+	var results = [];
+	for(var x = 0; x < numEntries; x++)
+		{
+			lines[x] = lines[x].replace("\r\n", "");
+			 makeLiForAll(lines[x], results);
+		}
+	return results;
+}
+//makes the Li tag for a breed and puts it into the array for the getAllBreeds function
+function makeLiForAll(line, results)
+{
+	var values = line.split("|");
+	var breed = values[0];
+	var url = values[1];
+	var item = listString1 + url + listString2 + breed + listSrting3;
+	
+	results.push(item);
+	
 }

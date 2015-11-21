@@ -3,17 +3,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Dog Facts Find a Breed</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="import.js"></script>
 <script src="filter.js"></script>
 <link rel="stylesheet" type="text/css" href="DogFacts.css">
 <link rel="stylesheet" type="text/css" href="nav/navbar.css">
 <script> 
-    $(function(){
-      $("#navContainer").load("nav/navbar.html"); 
-    });
+		//imports My navbar.html file content using the js fuction I wrote 
+		//that is contained in import.js
+		importHTML("navContainer", "nav/navbar.html");
+		
+		//gets content of my breeds.txt file
+    	getBreedData();
 </script>
 </head>
-<body>
+<body onload="setInitialDisplay()">
 <div id="navContainer"></div>
 <div class="content-box" style="height: 425px;">
 	<h2>Find a Breed</h2>

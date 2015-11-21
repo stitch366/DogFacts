@@ -1,7 +1,7 @@
-Akita|breeds/akita.html|large|working
-Japanese Chin|breeds/japanese-chin.html|small|toy
-Golden Retriever|breeds/golden-retriever.html|large|sporting
-Rat Terrier|breeds/rat-terrier.html|small|terrier
-Border Collie|breeds/border-collie.html|medium|herding
-Keeshond|breeds/keeshond.html|medium|non-sporting
+Akita|breeds/akita.html|large|working+
+Japanese Chin|breeds/japanese-chin.html|small|toy+
+Golden Retriever|breeds/golden-retriever.html|large|sporting+
+Rat Terrier|breeds/rat-terrier.html|small|terrier+
+Border Collie|breeds/border-collie.html|medium|herding+
+Keeshond|breeds/keeshond.html|medium|non-sporting+
 Beagle|breeds/beagle.html|small|hound
