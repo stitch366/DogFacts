@@ -55,11 +55,7 @@ function validateAndFilter()
 
 		}
 	
-	//function will always return false
-	//this is because otherwise the page will refresh on submission
-	//Which results in the results not being displayed long enough
-	//for the user to see them and click the links.
-	return false;
+	return valid;
 }
 //function that when fired that "toggles" the Type and Size on and off by
 //checking all the check boxes and disabling them for the filter being toggled

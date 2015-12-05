@@ -24,7 +24,7 @@
 		<div class="colleft">
 			<button id="toggle-size" value="on" style="margin-left: 15px;"onclick="toggle(this.id, 'size')">Turn Size Filter Off</button>
 			<button id="toggle-type" value="on" style="margin-left: 75px;"onclick="toggle(this.id, 'type')">Turn Type Filter Off</button>
-			<form id="filterForm" name="filter" onsubmit="return validateAndFilter()">
+			<form id="filterForm" name="filter" target="formtarget" onsubmit="return validateAndFilter()">
 				<div class="wrapper" style="height: 100%;">
 					<div class="colleft" style=" height: 100%;">
 						<fieldset >
@@ -61,5 +61,7 @@
 			</ul>
 	</div>
 </div>
+<!-- ifarame is form target to prevent page refresh  -->
+<iframe name="formtarget" width='0' height='0' style="display:none"></iframe>
 </body>
 </html>

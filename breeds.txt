@@ -4,4 +4,18 @@ Golden Retriever|breeds/golden-retriever.html|large|sporting+
 Rat Terrier|breeds/rat-terrier.html|small|terrier+
 Border Collie|breeds/border-collie.html|medium|herding+
 Keeshond|breeds/keeshond.html|medium|non-sporting+
-Beagle|breeds/beagle.html|small|hound
+Beagle|breeds/beagle.html|small|hound+
+Shetland Sheepdog|breeds/shetland-sheepdog.html|small|herding+
+German Shepherd|breeds/german-shepherd.html|large|herding+
+Bloodhound|breeds/bloodhound.html|large|hound+
+Whippet|breeds/whippet.html|medium|hound+
+Shiba Inu|breeds/shiba-inu.html|medium|non-sporting+
+English Bulldog|breeds/english-bulldog.html|large|non-sporting+
+Cocker Spaniel|breeds/cocker-spaniel.html|medium|sporting+
+Clumber Spaniel|breeds/clumber-spaniel.html|large|sporting+
+Bull Terrier|breeds/bull-terrier.html|large|terrier+
+Cairn Terrier|breeds/cairn-terrier.html|small|terrier+
+Pomeranian|breeds/pomeranian.html|small|toy+
+Chihuahua|breeds/chihuahua.html|small|toy+
+Great Dane|breeds/great-dane.html|large|working+
+Rottweiler|breeds/rottweiler.html|large|working
